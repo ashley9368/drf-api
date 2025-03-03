@@ -110,15 +110,18 @@ MIDDLEWARE = [
 
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
+        os.environ.get('CLIENT_ORIGIN'),
+        "http://localhost:3000",  # Allow local frontend
     ]
 elif 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https:\/\/.*\.codeinstitute-ide\.net$",
+        r"^http://localhost:3000$",  # Allow local frontend
     ]
 else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https:\/\/.*\.codeinstitute-ide\.net$",
+        r"^http://localhost:3000$",  # Allow local frontend
     ]
 
 CORS_ALLOW_CREDENTIALS = True
