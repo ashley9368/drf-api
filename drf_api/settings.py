@@ -62,7 +62,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1', 
-    'drf-api-walkthrough-1.herokuapp.com',
+    'https://drf-api-walkthrough-1-b4e76842989a.herokuapp.com/',
     'moments-walkthrough-25-a73b7ad954bc.herokuapp.com',
 ]
 
