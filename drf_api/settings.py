@@ -108,11 +108,14 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-   origin for origin in [
-     os.environ.get('CLIENT_ORIGIN'),
-     os.environ.get('CLIENT_ORIGIN_DEV')
-   ] if origin
- ]
+    "http://localhost:3000",  # Explicitly allow local frontend
+    os.environ.get('CLIENT_ORIGIN'),
+    os.environ.get('CLIENT_ORIGIN_DEV')
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",  # Allow CSRF from local frontend
+]
 
 CORS_ALLOW_CREDENTIALS = True
 
